@@ -14,10 +14,9 @@ Student_Exam2   <- data.frame(
 Student_Exam_Stat <- rbind(Student_Exam1,Student_Exam2)
 
 # This graph shows the Half Yearly result
-ggplot(data=Exam_1)+geom_bar(mapping = aes(x=Exam_1$Subject, y=Exam_1$Marks,fill = Exam_1$Subject),width = 0.5, stat = "identity")
-
+ggplot(data=Student_Exam1)+geom_bar(mapping = aes(x=Student_Exam1$Subject, y=Student_Exam1$Marks,fill = Student_Exam1$Subject),width = 0.5, stat = "identity") + xlab("Subject") + ylab("Marks")
 # This graph shows the Final Exam result
-ggplot(data=Exam_2)+geom_bar(mapping = aes(x=Exam_2$Subject, y=Exam_2$Marks,fill = Exam_2$Subject),width = 0.5, stat = "identity")
+ggplot(data=Student_Exam2)+geom_bar(mapping = aes(x=Student_Exam2$Subject, y=Student_Exam2$Marks,fill = Student_Exam2$Subject),width = 0.5, stat = "identity") + xlab("Subject") + ylab("Marks")
 
 # This graph shows the comparision of Half Yerly Result and Final Exam Results
 ggplot(Student_Exam_Stat, aes(x=Student_Exam_Stat$Subject, y=Student_Exam_Stat$Marks, fill= Student_Exam_Stat$Exam))+geom_bar(stat="identity", position = "dodge")+ xlab("Subject") + ylab("Marks")
