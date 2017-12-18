@@ -17,9 +17,15 @@ Student_Exam2   <- data.frame(
 Student_Exam_Stat <- rbind(Student_Exam1,Student_Exam2)
 
 # This graph shows the Half Yearly result
-ggplot(data=Student_Exam1)+geom_bar(mapping = aes(x=Student_Exam1$Subject, y=Student_Exam1$Marks,fill = Student_Exam1$Subject),width = 0.5, stat = "identity") + xlab("Subject") + ylab("Marks")
+ggplot(data=Student_Exam1)+geom_bar(mapping = aes(x=Subject, y=Marks,fill = Subject),width = 0.5, stat = "identity") + xlab("Subject") + ylab("Marks")
 # This graph shows the Final Exam result
-ggplot(data=Student_Exam2)+geom_bar(mapping = aes(x=Student_Exam2$Subject, y=Student_Exam2$Marks,fill = Student_Exam2$Subject),width = 0.5, stat = "identity") + xlab("Subject") + ylab("Marks")
+ggplot(data=Student_Exam2)+geom_bar(mapping = aes(x=Subject, y=Marks,fill = Subject),width = 0.5, stat = "identity") + xlab("Subject") + ylab("Marks")
 
 # This graph shows the comparision of Half Yerly Result and Final Exam Results
-ggplot(Student_Exam_Stat, aes(x=Student_Exam_Stat$Subject, y=Student_Exam_Stat$Marks, fill= Student_Exam_Stat$Exam))+geom_bar(stat="identity", position = "dodge")+ xlab("Subject") + ylab("Marks")
+ggplot(Student_Exam_Stat, aes(x=Subject, y=Marks, fill= Exam))+geom_bar(stat="identity", position = "dodge")+ xlab("Subject") + ylab("Marks")
+
+# Display the values while pointing the cursor on the bar. Use "plotly" package to display the values on the bar.
+library(plotly)
+p <- ggplot(Student_Exam_Stat, aes(x=Subject, y=Marks, fill= Exam))+geom_bar(stat="identity", position = "dodge")+ xlab("Subject") + ylab("Marks")
+p <- ggplotly(p)
+
