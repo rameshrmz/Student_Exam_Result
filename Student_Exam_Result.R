@@ -1,5 +1,4 @@
-# Before run the Code install the below Package to R Studio
-install.packages("tidyverse")
+# Before run the Code check the below Package installed in R Studio
 library(tidyverse)
 
 # This step creates data frame for Half Yearly Result
