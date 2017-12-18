@@ -1,3 +1,7 @@
+# Before run the Code install the below Package to R Studio
+install.packages("tidyverse")
+library(tidyverse)
+
 # This step creates data frame for Half Yearly Result
 Student_Exam1	<- data.frame(
   Exam 	  = c("Half-yearly","Half-yearly","Half-yearly","Half-yearly","Half-yearly"),
